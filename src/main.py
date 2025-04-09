@@ -1,21 +1,22 @@
+import asyncio
+
 import uvicorn
 from fastapi import FastAPI
 
+from routers import router
+from settings import settings
+
 app = FastAPI()
+app.include_router(router=router)
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+async def main():
+    uvicorn.run("main:app",
+                host=settings.ADDR,
+                port=settings.PORT,
+                reload=settings.TEST,
+                log_level=settings.LOG_LEVEL)
 
 
 if __name__ == "__main__":
-    uvicorn.run(app,
-                host="0.0.0.0",
-                port=8000,
-                )
+    asyncio.run(main())
