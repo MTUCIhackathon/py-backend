@@ -27,13 +27,14 @@ class SummarizeResponse(BaseModel):
     top_professions: List[str] = Field(..., alias="top_professions")
     
 class GenerateAITestInput(BaseModel):
-    pass
+    questions: Dict[str, str]
 
 class GenerateAITestResponce(BaseModel):
-    pass 
+    question: str
+    answers: List[str]
 
 class ResultAITestInput(BaseModel):
-    pass
+    user_answers: Dict[str, str]
 
 class ResultAITestResponce(BaseModel):
-    pass
+    top_professions: List[str]
