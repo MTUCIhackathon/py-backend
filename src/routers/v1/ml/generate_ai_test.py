@@ -16,7 +16,7 @@ async def generate_AI_test(test_input: GenerateAITestInput):
     except Exception as e:
         logger.error(f"Ошибка генерации теста: {e}")
         raise HTTPException(status_code=500, detail=str(e))
-    
+
 @router.post("/summarize_AI_test", response_model=ResultAITestResponce)
 async def summarize_AI_test(test_input: ResultAITestInput):
     try:

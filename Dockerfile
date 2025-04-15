@@ -25,7 +25,7 @@ USER appuser
 
 COPY . .
 
-EXPOSE 8001
+EXPOSE 8000
 
 #CMD uvicorn '.venv.lib.python3.12.site-packages.httpx._transports.asgi:application' --host=0.0.0.0 --port=8000
 CMD ["python3", "src/main.py"]
