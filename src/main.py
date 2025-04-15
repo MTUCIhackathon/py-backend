@@ -1,4 +1,5 @@
 import asyncio
+import logging
 
 import uvicorn
 from fastapi import FastAPI
@@ -12,6 +13,8 @@ from settings import settings
 
 app = FastAPI()
 
+logger = logging.getLogger(__name__)
+
 app.include_router(scientific_test_router, prefix="/scientific_test", tags=["Scientific test"])
 app.include_router(personality_test_router, prefix="/personality_test", tags=["MBTI test"])
 app.include_router(ai_test_router, prefix="/ai_test_router", tags=["AI test"])
@@ -19,6 +22,7 @@ app.include_router(summarize_router, prefix="/summarize", tags=["Summarize"])
 
 
 async def main():
+    logger.info("Config", settings)
     uvicorn.run("main:app",
                 host=settings.ADDR,
                 port=settings.PORT,
