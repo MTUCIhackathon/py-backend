@@ -5,7 +5,7 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     ADDR: str = "127.0.0.1"
-    PORT: int = 8000
+    PORT: int = 8080
     TEST: bool = True
 
     LOG_LEVEL: str = "info"
