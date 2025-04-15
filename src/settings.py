@@ -14,6 +14,9 @@ class Settings(BaseSettings):
     LLM_TEMPERATYRE: float = 0.8
     LLM_MAX_TOKENS: int = 1000
 
+    FOLDER_ID: str = ""
+    IAM_TOKEN: str = ""
+
     class Config:
         env_file = os.getenv("CONFIG_PATH")
 

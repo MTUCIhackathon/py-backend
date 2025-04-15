@@ -13,8 +13,8 @@ settings = Settings()
 
 class GenerateModel:
     def __init__(self, 
-                 folder_id=folder_id, 
-                 iam_token=iam_token, 
+                 folder_id=settings.FOLDER_ID,
+                 iam_token=settings.IAM_TOKEN,
                  model_type=settings.MODEL_TYPE, 
                  llm_temperature=settings.LLM_TEMPERATYRE, 
                  llm_max_tokens=settings.LLM_MAX_TOKENS, 
