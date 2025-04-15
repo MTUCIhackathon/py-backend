@@ -10,4 +10,4 @@ services:
     volumes:
       - ./.env:/app/.env
     ports:
-      - "8080:8080"
+      - "8082:8080"
