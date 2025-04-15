@@ -5,10 +5,6 @@ from settings import Settings
 from dotenv import load_dotenv
 import os
 
-load_dotenv() 
-folder_id = os.getenv("FOLDER_ID")
-iam_token = os.getenv("IAM_TOKEN")
-
 settings = Settings()
 
 class GenerateModel:
