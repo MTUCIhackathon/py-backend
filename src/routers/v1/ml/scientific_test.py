@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 generator = GenerateModel()
 
-@router.post("/", response_model=ScientificTestResponse)
+@router.post("/scientific_test", response_model=ScientificTestResponse)
 async def scientific_test(test_input: ScientificTestInput):
     try:
         result = generator.get_professions_scientific_test(test_input.test_result)

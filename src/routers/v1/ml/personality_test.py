@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 generator = GenerateModel()
 
-@router.post("/", response_model=PersonalityTestResponse)
+@router.post("/personality_test", response_model=PersonalityTestResponse)
 async def personality_test(test_input: PersonalityTestInput):
     try:
         result = generator.get_professions_personality_test(test_input.test_result)

@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 generator = GenerateModel()
 
-@router.post("/", response_model=SummarizeResponse)
+@router.post("/summarize", response_model=SummarizeResponse)
 async def summarize(tests: SummarizeInput):
     try:
         test_1 = tests.test_1
