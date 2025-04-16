@@ -38,3 +38,9 @@ class ResultAITestInput(BaseModel):
 
 class ResultAITestResponce(BaseModel):
     top_professions: List[str]
+    
+class GenerateImageInput(BaseModel):
+    profession: str
+    
+class GenerateImageResponce(BaseModel):
+    image_data: str

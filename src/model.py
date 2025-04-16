@@ -111,8 +111,13 @@ class GenerateModel:
         return prompt
       
     def summarize(self, test_1:list, test_2:list, test_3:list):
-        print(test_1, test_2, test_3)
         prompt = self.summarize_prompt(test_1, test_2, test_3)
         response = self.get_response(prompt)
         return response
+    
+    """ Generate image """
+    async def generate_image(self, profession: str):
+        prompt = f"Сгенерируй картинку в мультяшном стиле для этой профессии: {profession}"
+        img_data = await self.client.generate_image_async(prompt)
+        return img_data
     
