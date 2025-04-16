@@ -11,8 +11,8 @@ generator = GenerateModel()
 @router.post("/generate_image", response_model=GenerateImageResponce)
 async def generate_image(profession: GenerateImageInput):
     try:
-        result = generator.generate_image(profession.profession)
-        return GenerateImageResponce(**result)
+        image_data = await generator.generate_image(profession.profession)
+        return GenerateImageResponce(image_data=image_data)
     except Exception as e:
         logger.error(f"Ошибка генерации изображения: {e}")
         raise HTTPException(status_code=500, detail=str(e))

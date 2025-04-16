@@ -43,4 +43,4 @@ class GenerateImageInput(BaseModel):
     profession: str
     
 class GenerateImageResponce(BaseModel):
-    image_data: str
+    image_data: str         # НА ВЫХОДЕ BYTES

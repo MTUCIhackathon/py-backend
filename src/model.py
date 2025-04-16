@@ -99,7 +99,7 @@ class GenerateModel:
     
     
     """ Summarize """
-    def summarize_prompt(self, test_1:dict, test_2:dict, test_3:dict):
+    def summarize_prompt(self, test_1:list, test_2:list, test_3:list):
         template = self.read_prompt('src/prompts/summarize_prompt.txt')
 
         prompt = template.format(
